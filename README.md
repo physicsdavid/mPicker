@@ -10,7 +10,7 @@ Important usage note:
 The p5.js draw() function should include the command mResetMatrix() to ensure proper synchronization of the hidden canvas with the visible canvas.
 
 Functions:
-The following methods are replaced with the corresponding functions listed below. An asterisk indicates that the parameter list should be prepended with an integer ID number. The ID can be any integer and do not need to be unique if objects built from multiple primitives are required.
+The following methods are replaced with the corresponding functions listed below. An asterisk indicates that the parameter list should be prepended with an integer ID number. The ID can be any integer.
 
 p5.js method | mPicker function name
 ------------ | -------------
