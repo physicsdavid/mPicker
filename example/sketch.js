@@ -1,7 +1,5 @@
 /**
- * Example code to demonstrate use of the mPicker.js picker functions.
- *
- * Ensure that the mPicker.js file with correct path is included in index.html
+ * Example code to demonstrate use of the mPicker.js object picker functions.
  */
 
 var kitten;
@@ -60,7 +58,7 @@ function draw() {
     mTranslate(-50,-50,-50);
     mRotateZ(frameCount * -0.03);
     mCone(CONE1, 100);
-    mTexture(getObjectID(mouseX, mouseY)==CONE1 ? puppy : kitten);
+    mTexture(objectAtMouse()==CONE1 ? puppy : kitten);
     mCone(CONE1, 100);
     mPop();
     
@@ -68,14 +66,12 @@ function draw() {
     mPush();
     mTranslate(0,-200,-50);
     mSphere(SPHERE1, 100);
-    mTexture(getObjectID(mouseX, mouseY)==SPHERE1 ? puppy : kitten);
+    mTexture(objectAtMouse()==SPHERE1 ? puppy : kitten);
     mSphere(SPHERE1, 100);
     mPop();
     
     if(mouseIsPressed) {
-        var objectID = getObjectID(mouseX, mouseY);
-    
-        switch(objectID) {
+        switch(objectAtMouse()) {
             case BOX1:  // Spawn a set of boxes when clicked
                 for(var i=0; i<10; i++) {
                     mPush();
