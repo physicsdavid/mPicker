@@ -1,17 +1,14 @@
 /**
- * Example code to demonstrate use of the mouse3D.js picker functions.
+ * Example code to demonstrate use of the mPicker.js picker functions.
  *
- * All WEBGL 3D p5.js functions are replaced with versions named with a 
- * prepended "m" and the rest of the function name in camelCase.
- *
- * Note: mResetMatrix() should be included in the draw() function to ensure
- * proper operation.
+ * Ensure that the mPicker.js file with correct path is included in index.html
  */
 
 var kitten;
 var puppy;
 var cameraX = 0, cameraY = 0, cameraZ = 0;
 
+// Define some variable names to use as object IDs
 const BOX1=101;
 const CONE1=102;
 const PLANE1=103;
@@ -20,6 +17,7 @@ const TORUS1=105;
 
 const CLICKBOX=128;
 const CLICKPLANE=129;
+
 
 function preload() {
 	kitten = loadImage('kitten.jpg');
@@ -32,14 +30,16 @@ function setup() {
 
 function draw() {
     mBackground(0);
-	mResetMatrix();
+	mResetMatrix(); // Always include mResetMatrix to ensure proper operation of the object picker.
     
     adjustCamera();
     mCamera(cameraX, cameraY, cameraZ);
     
+    // Continually rotate the entire 3D space
 	mRotateY(frameCount * 0.01);
 	mRotateX(frameCount * 0.01);
 
+    // Draw a box that is clickable to spawn new boxes
     mPush();
     mTranslate(50,50,50);
     mRotateZ(frameCount * 0.01);
@@ -47,6 +47,7 @@ function draw() {
     mBox(BOX1, 100);
     mPop();
     
+    // Draw a plane that is clickable to change its texture image
     mPush();
     mTranslate(150,150,150);
     mRotateX(frameCount * 0.02);
@@ -54,6 +55,7 @@ function draw() {
     mPlane(PLANE1, 100);
     mPop();
     
+    // Draw a cone that changes texture image when hovered over with the mouse
     mPush();
     mTranslate(-50,-50,-50);
     mRotateZ(frameCount * -0.03);
@@ -62,6 +64,7 @@ function draw() {
     mCone(CONE1, 100);
     mPop();
     
+    // Draw a sphere that changes texture image when hovered over with a mouse
     mPush();
     mTranslate(0,-200,-50);
     mSphere(SPHERE1, 100);
@@ -73,7 +76,7 @@ function draw() {
         var objectID = getObjectID(mouseX, mouseY);
     
         switch(objectID) {
-            case BOX1:
+            case BOX1:  // Spawn a set of boxes when clicked
                 for(var i=0; i<10; i++) {
                     mPush();
                     mTranslate(0,0,(i-5)*50);
@@ -83,7 +86,7 @@ function draw() {
                     mPop();
                 }
                 break;
-            case PLANE1:
+            case PLANE1:  // Change the texture image when clicked
                 mPush();
                 mTranslate(150,150,150);
                 mRotateX(frameCount * 0.02);
