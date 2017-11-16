@@ -3,6 +3,7 @@ title: 'An easy-to-use p5.js 3D object picker for visual artists'
 tags:
   - visual arts
   - p5.js
+  - 3D
 authors:
  - name: David J Harris
    orcid: 0000-0002-8321-2062
