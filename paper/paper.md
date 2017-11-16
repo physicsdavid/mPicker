@@ -11,38 +11,8 @@ authors:
 affiliations:
  - name: Queensland College of Art, Griffith University
    index: 1
-
-references:
-- id: mccarthy2016
-  title: Getting started with p5.js : making interactive graphics in JavaScript and Processing
-  author:
-  - family: McCarthy
-    given: Lauren
-  publisher: Maker Media, Inc.
-  type: book
-  issued:
-    year: 2016
-
-- id: p5jswebsite
-  title: p5.js
-  author:
-  - family: McCarthy
-    given: Lauren
-  URL: 'https://p5js.org/'
-  type: webpage
-  
-- id: processingwebsite
-  title: Processing.org
-  author:
-  - family: Fry
-    given: Ben
-  - family: Reas
-    given: Casey
-  URL: 'https://processing.org/'
-  type: webpage
-  
-  
 date: 16 November 2017
+bibliography: paper.bib
 ---
 
 # Summary
@@ -69,7 +39,7 @@ artistic output without needing to first build a more extensive background of co
 and without needing to perform any mathematical calculations.
 
 The set of functions can either be included as a javascript file or simply copied into a
-javascript file for the simplest possible use.
+p5.js sketch.js file for the simplest possible use.
 
 This module was developed by the author as part of graduate work at the Queensland College
 of Art, Griffith University, and tested with undergraduate students in the course "Creative
