@@ -340,10 +340,10 @@ function mTexture() {
 }
 
 /**
- * objectClicked returns the object ID at the current mouse position when clicked.
+ * objectAtMouse returns the object ID at the current mouse position.
  *
- * @return {Number} ID of object nearest to camera at position of mouse click.
+ * @return {Number} ID of object nearest to camera at position of mouse.
  */
-function objectClicked(obj) {
+function objectAtMouse() {
     return getObjectID(mouseX, mouseY);
 }
