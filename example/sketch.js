@@ -1,5 +1,14 @@
 /**
  * Example code to demonstrate use of the mPicker.js object picker functions.
+ * See https://p5js.org/reference/ for details of how the standard p5.js
+ * 3D functions work.
+ * 
+ * This code displays a set of 3D objects moving in space. Arrow keys move 
+ * the camera. Mouseover changes the texture image for some objects. Mouse clicks 
+ * on other objects either change the texture image or spawn other objects.
+ *
+ * Ensure that the mPicker.js function library is included in the corresponding .html
+ * file that includes this code. See comments in mPicker.js for usage of new functions.
  */
 
 var kitten;
@@ -30,7 +39,7 @@ function draw() {
     mBackground(0);
 	mResetMatrix(); // Always include mResetMatrix to ensure proper operation of the object picker.
     
-    adjustCamera();
+    adjustCamera(); // Check for arrow presses that change the camera position.
     mCamera(cameraX, cameraY, cameraZ);
     
     // Continually rotate the entire 3D space
@@ -70,6 +79,8 @@ function draw() {
     mSphere(SPHERE1, 100);
     mPop();
     
+    // If the mouse if clicked, check if it is clicked on specific objects
+    // and change the objects or spawn new objects
     if(mouseIsPressed) {
         switch(objectAtMouse()) {
             case BOX1:  // Spawn a set of boxes when clicked
