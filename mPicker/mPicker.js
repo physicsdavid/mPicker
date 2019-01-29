@@ -161,7 +161,10 @@ function mCylinder() {
 function mCone() {
     var passon = [...arguments].slice(1);
   	var c=arguments[0];
-    mPage.rotateX(PI);
+    //mPage.rotateX(PI); // This line was in an early version, seemingly to compensate for
+    					 // a bug whereby the cone would invert. However, it doesn't seem
+    					 // necessary now, but is left here as a comment in case there is
+    					 // an issue still remaining.
     cone(...passon);
     mPage.fill((c >> 16) & 0xFF, (c >> 8) & 0xF, c & 0xFF);
     mPage.cone(...passon);
